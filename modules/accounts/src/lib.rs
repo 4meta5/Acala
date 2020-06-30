@@ -48,7 +48,7 @@ type NegativeImbalanceOf<T> = <<T as pallet_transaction_payment::Trait>::Currenc
 >>::NegativeImbalance;
 
 pub trait Trait: system::Trait + pallet_transaction_payment::Trait + orml_currencies::Trait {
-	/// The number of fee transfer times per period.
+	/// The number of free transfer times per period.
 	type FreeTransferCount: Get<u8>;
 
 	/// The period to count free transfer.

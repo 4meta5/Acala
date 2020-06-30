@@ -96,7 +96,7 @@ decl_module! {
 		}
 
 		#[weight = 10_000]
-		pub fn simualte_receive(origin, to: T::AccountId, amount: Balance) {
+		pub fn simulate_receive(origin, to: T::AccountId, amount: Balance) {
 			ensure_root(origin)?;
 			let new_available = Self::available().checked_sub(amount).ok_or(Error::<T>::NotEnough)?;
 			T::DOTCurrency::deposit(&to, amount)?;
